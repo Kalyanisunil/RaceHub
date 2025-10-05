@@ -41,4 +41,12 @@ public class driverService {
         return driverRepository.saveAll(drivers);
     }
 
+
+    public Driver getDriverById(Long id)
+    {
+        Driver res = driverRepository.findById(id);
+        return res;
+
+
+    }
 }
