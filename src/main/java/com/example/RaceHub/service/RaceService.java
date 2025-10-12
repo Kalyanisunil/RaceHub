@@ -2,12 +2,11 @@ package com.example.RaceHub.service;
 
 import com.example.RaceHub.models.Race;
 import com.example.RaceHub.repository.RaceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RaceService {
@@ -24,4 +23,10 @@ public class RaceService {
             return raceRepository.findAll();
         }
 
+    public Optional<Race> getRaceById(long id) {
+
+
+        Optional<Race> race=raceRepository.findById(id);
+        return race;
+    }
 }
