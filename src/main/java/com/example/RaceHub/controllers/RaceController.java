@@ -16,7 +16,8 @@ import java.util.Optional;
 public class RaceController {
         @Autowired
         private RaceService raceService;
-@GetMapping("/races")
+
+  @GetMapping("/races")
    public List<Race> getUpcomingRaces()
     {
        return raceService.getUpcomingRaces();

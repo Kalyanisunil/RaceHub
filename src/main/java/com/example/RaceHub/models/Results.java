@@ -13,7 +13,7 @@ public class Results {
     private Race race;
 
     @ManyToOne
-    @JoinColumn(name = "driver_id")
+    @JoinColumn(name = "id")
     private Driver driver;
 
     private String position;
