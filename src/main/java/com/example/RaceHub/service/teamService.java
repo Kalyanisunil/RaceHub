@@ -17,12 +17,12 @@ public class teamService {
         this.teamrepo = teamRepository;
     }
 
-    private List<Team> getAllTeam()
+    public List<Team> getAllTeam()
      {
       return teamrepo.findAll();
      }
 
-    private Optional<Team> getAllTeamById(Long id)
+    public Optional<Team> getTeamById(Long id)
     {
         return teamrepo.findAllById(id);
     }
