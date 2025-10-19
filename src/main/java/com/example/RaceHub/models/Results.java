@@ -22,6 +22,9 @@ public class Results {
 
     private Boolean fastest_lap;
 
+    public Results() {
+    }
+
     public Results(Driver driver, Boolean fastest_lap, long points, String position, Race race, long resultId) {
         this.driver = driver;
         this.fastest_lap = fastest_lap;

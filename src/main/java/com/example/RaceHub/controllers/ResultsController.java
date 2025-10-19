@@ -46,4 +46,9 @@ public class ResultsController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+    @GetMapping("/results")
+    public List<Results> getAllResults()
+    {
+        return resultRepository.findAll();
+    }
 }
