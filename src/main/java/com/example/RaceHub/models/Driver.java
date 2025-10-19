@@ -22,19 +22,26 @@ public class Driver {
     private String headshotUrl;
     private String countryCode;
 
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
+
+
     public Driver()
     {
 
     }
-    public Driver(String broadcastName, String countryCode, long id, int driverNumber, String firstName, String fullName, String headshotUrl, String lastName, String teamColour, String teamName) {
+
+    public Driver(String broadcastName, String countryCode, int driverNumber, String firstName, String fullName, String headshotUrl, long id, String lastName, Team team, String teamColour, String teamName) {
         this.broadcastName = broadcastName;
         this.countryCode = countryCode;
-        this.id=id;
         this.driverNumber = driverNumber;
         this.firstName = firstName;
         this.fullName = fullName;
         this.headshotUrl = headshotUrl;
+        this.id = id;
         this.lastName = lastName;
+        this.team = team;
         this.teamColour = teamColour;
         this.teamName = teamName;
     }
@@ -120,11 +127,20 @@ public class Driver {
         this.id = id;
     }
 
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
     @Override
     public String toString() {
         return "Driver{" +
                 "broadcastName='" + broadcastName + '\'' +
-                ", driverId='" + id + '\'' +
+                ", id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", fullName='" + fullName + '\'' +
@@ -133,7 +149,7 @@ public class Driver {
                 ", teamColour='" + teamColour + '\'' +
                 ", headshotUrl='" + headshotUrl + '\'' +
                 ", countryCode='" + countryCode + '\'' +
+                ", team=" + team +
                 '}';
     }
-
 }
