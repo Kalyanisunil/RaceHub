@@ -6,6 +6,7 @@ import com.example.RaceHub.repository.TeamRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class teamService {
@@ -20,4 +21,12 @@ public class teamService {
      {
       return teamrepo.findAll();
      }
+
+    private Optional<Team> getAllTeamById(Long id)
+    {
+        return teamrepo.findAllById(id);
+    }
+
+
+
 }
