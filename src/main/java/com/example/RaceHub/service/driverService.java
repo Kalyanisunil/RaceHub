@@ -19,6 +19,9 @@ public class driverService {
     @Autowired
     private driverRepository driverRepository;
 
+    public Driver saveDriver(Driver driver) {
+        return driverRepository.save(driver);
+    }
     public List<Driver> fetchAndSaveDriver()
     {
         String url="https://api.openf1.org/v1/drivers";
@@ -47,4 +50,5 @@ public class driverService {
         Driver res = driverRepository.findById(id);
         return res;
     }
+
 }

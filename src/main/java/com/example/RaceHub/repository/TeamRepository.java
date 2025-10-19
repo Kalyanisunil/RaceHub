@@ -11,4 +11,5 @@ public interface TeamRepository extends JpaRepository<Team,Long> {
 
 
     Optional<Team> findAllById(Long id);
+
 }
